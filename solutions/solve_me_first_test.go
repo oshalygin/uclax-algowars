@@ -26,7 +26,8 @@ func solveMeFirst(firstValue int, secondValue int) int {
 	return firstValue + secondValue
 }
 
-func Test_SolveMeFirst(t *testing.T) {
+// TestSolveMeFirst is a component wrapper over the Solve Me First solution
+func TestSolveMeFirst(t *testing.T) {
 	g := Goblin(t)
 	g.Describe("Solve Me First", func() {
 		g.It("2 + 3 = 5", func() {
