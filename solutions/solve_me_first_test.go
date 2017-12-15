@@ -22,7 +22,7 @@ import (
 	. "github.com/franela/goblin"
 )
 
-func SolveMeFirst(firstValue int, secondValue int) int {
+func solveMeFirst(firstValue int, secondValue int) int {
 	return firstValue + secondValue
 }
 
@@ -33,9 +33,9 @@ func Test_SolveMeFirst(t *testing.T) {
 			a := 2
 			b := 3
 
-			expected := 4
+			expected := 5
 
-			actual := SolveMeFirst(a, b)
+			actual := solveMeFirst(a, b)
 
 			g.Assert(actual).Equal(expected)
 
