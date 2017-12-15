@@ -15,6 +15,7 @@ before_install:
 
 script:
   - go vet ./...
+  - go test ./...
   - golint -set_exit_status .
 
 after_success:
