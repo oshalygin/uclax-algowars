@@ -32,14 +32,12 @@ func TestSolveMeFirst(t *testing.T) {
 	g.Describe("Solve Me First", func() {
 		g.It("2 + 3 = 5", func() {
 			a := 2
-			b := 3
+			b := 5
 
 			expected := 5
 
 			actual := solveMeFirst(a, b)
-
 			g.Assert(actual).Equal(expected)
-
 		})
 	})
 }
