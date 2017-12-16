@@ -32,7 +32,7 @@ func TestSolveMeFirst(t *testing.T) {
 	g.Describe("Solve Me First", func() {
 		g.It("2 + 3 = 5", func() {
 			a := 2
-			b := 5
+			b := 3
 
 			expected := 5
 

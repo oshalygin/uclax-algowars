@@ -25,20 +25,15 @@ Sample Output
 package tests
 
 import (
-	"strconv"
-	"strings"
 	"testing"
 
 	. "github.com/franela/goblin"
 )
 
-func getArraySum(input string) int {
-	array := strings.Split(input, " ")
-
+func getArraySum(input []int) int {
 	sum := 0
-	for _, value := range array {
-		integerValue, _ := strconv.Atoi(value)
-		sum = sum + integerValue
+	for i := range input {
+		sum += input[i]
 	}
 
 	return sum
@@ -50,7 +45,7 @@ func TestSimpleArraySum(t *testing.T) {
 	g.Describe("Simple Array Sum", func() {
 
 		g.It("Input: 1 2 3 4 10 11 => 31", func() {
-			userInput := "1 2 3 4 10 11"
+			userInput := []int{1, 2, 3, 4, 10, 11}
 			expected := 31
 
 			actual := getArraySum(userInput)
@@ -58,7 +53,7 @@ func TestSimpleArraySum(t *testing.T) {
 		})
 
 		g.It("Input: 54 5 3 2 780 85 => 31", func() {
-			userInput := "54 5 3 2 780 85"
+			userInput := []int{54, 5, 3, 2, 780, 85}
 			expected := 929
 
 			actual := getArraySum(userInput)
