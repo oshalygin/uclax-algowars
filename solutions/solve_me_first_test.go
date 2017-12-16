@@ -14,7 +14,7 @@ Output Format
 Code that prints the sum calculated and returned by solveMeFirst is provided for you in the editor.
 */
 
-package tests
+package solutions
 
 import (
 	"testing"

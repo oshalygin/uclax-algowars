@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
+	"github.com/oshalygin/uclax-algowars/solutions"
 )
 
 func main() {
@@ -16,14 +17,18 @@ func main() {
 	color.Green(startMessage)
 	color.White(strings.Repeat("=", len(startMessage)))
 
-	var n int
 	io := bufio.NewReader(os.Stdin)
-	fmt.Fscan(io, &n)
 
-	arr := make([]int, n)
+	bob := make([]int, 3)
+	alice := make([]int, 3)
 
-	for i := 0; i < n; i++ {
-		fmt.Fscan(io, &arr[i])
+	for i := 0; i < 3; i++ {
+		fmt.Fscan(io, &alice[i])
 	}
-	fmt.Println(arr)
+	for i := 0; i < 3; i++ {
+		fmt.Fscan(io, &bob[i])
+	}
+
+	result := solutions.CompareTheTriplets(alice, bob)
+	fmt.Printf("%d %d", result[0], result[1])
 }

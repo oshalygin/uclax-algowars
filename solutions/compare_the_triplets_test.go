@@ -44,28 +44,13 @@ Alice's comparison score is , and Bob's comparison score is . Thus, we print 1 1
 
 */
 
-package tests
+package solutions
 
 import (
 	"testing"
 
 	. "github.com/franela/goblin"
 )
-
-func compareTheTriplets(aliceInput []int, bobInput []int) []int {
-	alice := 0
-	bob := 0
-
-	for i := range aliceInput {
-		if aliceInput[i] > bobInput[i] {
-			alice++
-		} else if aliceInput[i] < bobInput[i] {
-			bob++
-		}
-	}
-
-	return []int{alice, bob}
-}
 
 // TestSimpleArraySum is a component wrapper over the Simple Array Sum solution
 func TestCompareTheTriplets(t *testing.T) {
@@ -77,7 +62,7 @@ func TestCompareTheTriplets(t *testing.T) {
 			bobInput := []int{3, 6, 10}
 			expected := []int{1, 1}
 
-			actual := compareTheTriplets(aliceInput, bobInput)
+			actual := CompareTheTriplets(aliceInput, bobInput)
 			g.Assert(actual).Equal(expected)
 		})
 
@@ -86,7 +71,7 @@ func TestCompareTheTriplets(t *testing.T) {
 			bobInput := []int{1, 1, 1}
 			expected := []int{0, 0}
 
-			actual := compareTheTriplets(aliceInput, bobInput)
+			actual := CompareTheTriplets(aliceInput, bobInput)
 			g.Assert(actual).Equal(expected)
 		})
 
@@ -95,7 +80,7 @@ func TestCompareTheTriplets(t *testing.T) {
 			bobInput := []int{1, 1, 1}
 			expected := []int{3, 0}
 
-			actual := compareTheTriplets(aliceInput, bobInput)
+			actual := CompareTheTriplets(aliceInput, bobInput)
 			g.Assert(actual).Equal(expected)
 		})
 

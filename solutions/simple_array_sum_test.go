@@ -22,7 +22,7 @@ Sample Output
 
 */
 
-package tests
+package solutions
 
 import (
 	"testing"
