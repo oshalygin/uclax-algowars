@@ -17,18 +17,16 @@ func main() {
 	color.Green(startMessage)
 	color.White(strings.Repeat("=", len(startMessage)))
 
+	var n int
 	io := bufio.NewReader(os.Stdin)
+	fmt.Fscan(io, &n)
 
-	bob := make([]int, 3)
-	alice := make([]int, 3)
+	input := make([]int64, n)
 
-	for i := 0; i < 3; i++ {
-		fmt.Fscan(io, &alice[i])
-	}
-	for i := 0; i < 3; i++ {
-		fmt.Fscan(io, &bob[i])
+	for i := 0; i < n; i++ {
+		fmt.Fscan(io, &input[i])
 	}
 
-	result := solutions.CompareTheTriplets(alice, bob)
-	fmt.Printf("%d %d", result[0], result[1])
+	result := solutions.AVeryBigSum(input)
+	fmt.Println(result)
 }
