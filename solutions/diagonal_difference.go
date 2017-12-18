@@ -54,21 +54,11 @@ func abs(number int) int {
 func DiagonalDifference(input [][]int) int {
 	var leftDiagonal int
 	var rightDiagonal int
+	arrSize := len(input) - 1
 
 	for i := range input {
-		for j := range input {
-			if i == j {
-				leftDiagonal = leftDiagonal + input[i][j]
-			}
-		}
-	}
-
-	for i := range input {
-		for j := range input {
-			if i == j {
-				rightDiagonal = rightDiagonal + input[j][i]
-			}
-		}
+		leftDiagonal = leftDiagonal + input[i][i]
+		rightDiagonal = rightDiagonal + input[i][arrSize-i]
 	}
 
 	sum := leftDiagonal - rightDiagonal
