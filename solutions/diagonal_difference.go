@@ -42,17 +42,37 @@ Note: |x| is absolute value function
 
 package solutions
 
+func abs(number int) int {
+	if number < 0 {
+		return number * -1
+	}
+	return number
+
+}
+
 // DiagonalDifference calculates the difference between the diagonals in the matrix
 func DiagonalDifference(input [][]int) int {
-	var sum int
+	var leftDiagonal int
+	var rightDiagonal int
 
 	for i := range input {
 		for j := range input {
-			if i == j || i == 0 || j == 0 {
-				sum += input[i][j]
+			if i == j {
+				leftDiagonal = leftDiagonal + input[i][j]
 			}
 		}
 	}
 
-	return sum
+	for i := range input {
+		for j := range input {
+			if i == j {
+				rightDiagonal = rightDiagonal + input[j][i]
+			}
+		}
+	}
+
+	sum := leftDiagonal - rightDiagonal
+
+	absoluteValue := abs(sum)
+	return absoluteValue
 }
