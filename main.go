@@ -22,17 +22,13 @@ func main() {
 	io := bufio.NewReader(os.Stdin)
 	fmt.Fscan(io, &n)
 
-	input := make([][]int, n)
+	input := make([]int, n)
 	println(n)
 	for i := 0; i < n; i++ {
-		subArray := make([]int, n)
-		for j := 0; j < n; j++ {
-			fmt.Fscan(io, &subArray[j])
-		}
-		input[i] = subArray
+		fmt.Fscan(io, &input[i])
 	}
 
-	result := solutions.DiagonalDifference(input)
+	result := solutions.PlusMinus(input)
 	fmt.Println(result)
 
 }
