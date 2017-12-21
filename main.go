@@ -6,8 +6,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/fatih/color"
 	"github.com/oshalygin/uclax-algowars/solutions"
+
+	"github.com/fatih/color"
 )
 
 func main() {
@@ -21,12 +22,17 @@ func main() {
 	io := bufio.NewReader(os.Stdin)
 	fmt.Fscan(io, &n)
 
-	input := make([]int64, n)
-
+	input := make([][]int, n)
+	println(n)
 	for i := 0; i < n; i++ {
-		fmt.Fscan(io, &input[i])
+		subArray := make([]int, n)
+		for j := 0; j < n; j++ {
+			fmt.Fscan(io, &subArray[j])
+		}
+		input[i] = subArray
 	}
 
-	result := solutions.AVeryBigSum(input)
+	result := solutions.DiagonalDifference(input)
 	fmt.Println(result)
+
 }
