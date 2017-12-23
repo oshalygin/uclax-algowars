@@ -22,13 +22,10 @@ func main() {
 	io := bufio.NewReader(os.Stdin)
 	fmt.Fscan(io, &n)
 
-	input := make([]int, n)
-	println(n)
-	for i := 0; i < n; i++ {
-		fmt.Fscan(io, &input[i])
-	}
+	result := solutions.StairCase(n)
 
-	result := solutions.PlusMinus(input)
-	fmt.Println(result)
+	for i := range result {
+		fmt.Println(result[i])
+	}
 
 }
