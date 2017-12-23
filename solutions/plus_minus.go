@@ -21,9 +21,9 @@ package solutions
 
 // PlusMinusFractions defines the data object that stores the positive, negative and zero values of an array
 type PlusMinusFractions struct {
-	positive float64
-	negative float64
-	zero     float64
+	Positive float64
+	Negative float64
+	Zero     float64
 }
 
 // PlusMinus is a solution to the Hackerrank problem
@@ -49,9 +49,9 @@ func PlusMinus(input []int) PlusMinusFractions {
 		}
 	}
 
-	result.positive = positives / float64(n)
-	result.negative = negatives / float64(n)
-	result.zero = zeros / float64(n)
+	result.Positive = positives / float64(n)
+	result.Negative = negatives / float64(n)
+	result.Zero = zeros / float64(n)
 
 	return result
 }

@@ -1,39 +1,34 @@
-package solutions
+package solutions_test
 
 import (
-	"testing"
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
 
-	. "github.com/franela/goblin"
+	. "github.com/oshalygin/uclax-algowars/solutions"
 )
 
-func TestDiagonalDifference(t *testing.T) {
-	g := Goblin(t)
-	g.Describe("Diagonal Difference", func() {
+var _ = Describe("DiagonalDifference", func() {
+	It("Input: [[11, 2, 4], [4, 5, 6], [10, 8, -12]] => 15", func() {
 
-		g.It("Input: [[11, 2, 4], [4, 5, 6], [10, 8, -12]] => 15", func() {
+		input := [][]int{
+			[]int{11, 2, 4}, []int{4, 5, 6}, []int{10, 8, -12},
+		}
 
-			input := [][]int{
-				[]int{11, 2, 4}, []int{4, 5, 6}, []int{10, 8, -12},
-			}
+		expected := 15
 
-			expected := 15
-
-			actual := DiagonalDifference(input)
-			g.Assert(actual).Equal(expected)
-		})
-
-		g.It("Input: [[11, 2, 4, 3], [4, 5, 6, 3], [10, 8, -12, 3], [1, 1, 1, 1]] => 13", func() {
-
-			input := [][]int{
-				[]int{11, 2, 4, 3}, []int{4, 5, 6, 3}, []int{10, 8, -12, 3}, []int{1, 1, 1, 1},
-			}
-
-			expected := 13
-
-			actual := DiagonalDifference(input)
-			g.Assert(actual).Equal(expected)
-		})
-
+		actual := DiagonalDifference(input)
+		Expect(actual).To(Equal(expected))
 	})
 
-}
+	It("Input: [[11, 2, 4, 3], [4, 5, 6, 3], [10, 8, -12, 3], [1, 1, 1, 1]] => 13", func() {
+
+		input := [][]int{
+			[]int{11, 2, 4, 3}, []int{4, 5, 6, 3}, []int{10, 8, -12, 3}, []int{1, 1, 1, 1},
+		}
+
+		expected := 13
+
+		actual := DiagonalDifference(input)
+		Expect(actual).To(Equal(expected))
+	})
+})

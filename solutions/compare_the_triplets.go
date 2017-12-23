@@ -1,5 +1,6 @@
 package solutions
 
+// CompareTheTriplets solution
 func CompareTheTriplets(aliceInput []int, bobInput []int) []int {
 	alice := 0
 	bob := 0

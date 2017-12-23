@@ -1,27 +1,22 @@
-package solutions
+package solutions_test
 
 import (
-	"testing"
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
 
-	. "github.com/franela/goblin"
+	. "github.com/oshalygin/uclax-algowars/solutions"
 )
 
-// TestSimpleArraySum is a component wrapper over the Simple Array Sum solution
-func TestAVeryBigSum(t *testing.T) {
-	g := Goblin(t)
-	g.Describe("A Very Big Sum", func() {
+var _ = Describe("AVeryBigSum", func() {
 
-		g.It("Input: 1000000001 1000000002 1000000003 1000000004 1000000005 => 5000000015", func() {
-			input := []int64{
-				1000000001, 1000000002, 1000000003, 1000000004, 1000000005,
-			}
+	It("Input: 1000000001 1000000002 1000000003 1000000004 1000000005 => 5000000015", func() {
+		input := []int64{
+			1000000001, 1000000002, 1000000003, 1000000004, 1000000005,
+		}
 
-			expected := 5000000015
+		var expected int64 = 5000000015
 
-			actual := AVeryBigSum(input)
-			g.Assert(actual).Equal(expected)
-		})
-
+		actual := AVeryBigSum(input)
+		Expect(actual).To(Equal(expected))
 	})
-
-}
+})
