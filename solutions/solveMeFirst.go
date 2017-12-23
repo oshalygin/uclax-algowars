@@ -16,28 +16,7 @@ Code that prints the sum calculated and returned by solveMeFirst is provided for
 
 package solutions
 
-import (
-	"testing"
-
-	. "github.com/franela/goblin"
-)
-
-func StairCase(firstValue int, secondValue int) int {
-	return firstValue + secondValue
-}
-
-// TestStairCase is a component wrapper over the Solve Me First solution
-func TestStairCase(t *testing.T) {
-	g := Goblin(t)
-	g.Describe("Staircase", func() {
-		g.It("2 + 3 = 5", func() {
-			a := 2
-			b := 3
-
-			expected := 5
-
-			actual := solveMeFirst(a, b)
-			g.Assert(actual).Equal(expected)
-		})
-	})
+// SolveMeFirst solution
+func SolveMeFirst(x int, y int) int {
+	return x + y
 }
