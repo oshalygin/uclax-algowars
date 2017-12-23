@@ -10,7 +10,7 @@ import (
 var _ = Describe("Staircase", func() {
 	It("6", func() {
 		height := 6
-		expected := []string{"#", "##", "###", "####", "#####", "######"}
+		expected := []string{"     #", "    ##", "   ###", "  ####", " #####", "######"}
 
 		actual := StairCase(height)
 		Expect(actual).To(Equal(expected))
@@ -28,7 +28,7 @@ var _ = Describe("Staircase", func() {
 
 	It("2", func() {
 		height := 2
-		expected := []string{"#", "##"}
+		expected := []string{" #", "##"}
 
 		actual := StairCase(height)
 		Expect(actual).To(Equal(expected))

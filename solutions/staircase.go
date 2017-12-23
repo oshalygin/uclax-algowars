@@ -49,7 +49,8 @@ func StairCase(count int) []string {
 
 	staircase := make([]string, count)
 	for i := 1; i <= count; i++ {
-		staircase[i-1] = strings.Repeat(character, i)
+		whitespace := strings.Repeat(" ", count-i)
+		staircase[i-1] = whitespace + strings.Repeat(character, i)
 	}
 
 	return staircase
