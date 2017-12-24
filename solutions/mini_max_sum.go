@@ -44,29 +44,29 @@ type MiniMax struct {
 func MiniMaxSum(input []int64) MiniMax {
 	miniMax := MiniMax{Minimum: 0, Maximum: 0}
 
-	var minimumInt int64
-	var maximumInt int64
+	var minimumInt int64 = 1
+	var maximumInt int64 = 1
 	var minimumIntIndex int
 	var maximumIntIndex int
 
-	for i, val := range input {
-		if val < maximumInt {
-			maximumInt = val
+	for i := 0; i < len(input); i++ {
+		if input[i] > maximumInt {
+			maximumInt = input[i]
 			maximumIntIndex = i
 		}
 
-		if val > minimumInt {
-			minimumInt = val
+		if input[i] <= minimumInt {
+			minimumInt = input[i]
 			minimumIntIndex = i
 		}
 	}
 
-	for i, val := range input {
+	for i, number := range input {
 		if minimumIntIndex != i {
-			miniMax.Minimum += val
+			miniMax.Maximum += number
 		}
 		if maximumIntIndex != i {
-			miniMax.Maximum += val
+			miniMax.Minimum += number
 		}
 	}
 
