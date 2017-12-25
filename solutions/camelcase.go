@@ -38,6 +38,7 @@ Thus, we print  on a new line.
 
 package solutions
 
+// CamelCase solution
 func CamelCase(input string) int {
 
 	lowerCaseLetterCharCodeLowerBound := 97

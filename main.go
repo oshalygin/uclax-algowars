@@ -18,14 +18,11 @@ func main() {
 	color.Green(startMessage)
 	color.White(strings.Repeat("=", len(startMessage)))
 
-	var n int
+	var input string
 	io := bufio.NewReader(os.Stdin)
-	fmt.Fscan(io, &n)
+	fmt.Fscan(io, &input)
 
-	result := solutions.StairCase(n)
-
-	for i := range result {
-		fmt.Println(result[i])
-	}
+	result := solutions.CamelCase(input)
+	fmt.Println(result)
 
 }
