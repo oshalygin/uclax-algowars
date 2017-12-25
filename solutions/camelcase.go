@@ -40,5 +40,15 @@ package solutions
 
 func CamelCase(input string) int {
 
-	return 0
+	lowerCaseLetterCharCodeLowerBound := 97
+
+	sum := 1
+
+	for _, r := range input {
+		if int(r) < lowerCaseLetterCharCodeLowerBound {
+			sum++
+		}
+	}
+
+	return sum
 }
