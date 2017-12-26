@@ -22,7 +22,7 @@ func main() {
 	io := bufio.NewReader(os.Stdin)
 	fmt.Fscan(io, &input)
 
-	result := solutions.CamelCase(input)
+	result := solutions.TimeConversion(input)
 	fmt.Println(result)
 
 }

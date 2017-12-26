@@ -14,6 +14,6 @@ var _ = Describe("TimeConversion", func() {
 
 		actual := TimeConversion(input)
 
-    Expect(actual).To(Equal(expected))
+		Expect(actual).To(Equal(expected))
 	})
 })

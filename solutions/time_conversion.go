@@ -45,5 +45,5 @@ func TimeConversion(date string) string {
 	splitTime[0] = strconv.Itoa(hours)
 
 	updated = strings.Join(splitTime, ":")
-  return updated
+	return updated
 }
