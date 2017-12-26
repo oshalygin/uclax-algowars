@@ -34,15 +34,17 @@ func TimeConversion(date string) string {
 	replacer := strings.NewReplacer("PM", "", "AM", "")
 	updated := replacer.Replace(date)
 
-	if !isPM {
-		return updated
-	}
-
 	splitTime := strings.Split(updated, ":")
 	hours, _ := strconv.Atoi(splitTime[0])
-	hours = hours + 12
 
-	splitTime[0] = strconv.Itoa(hours)
+	if isPM && hours != 12 {
+		hours = hours + 12
+		splitTime[0] = strconv.Itoa(hours)
+	}
+
+	if !isPM && hours == 12 {
+		splitTime[0] = "00"
+	}
 
 	updated = strings.Join(splitTime, ":")
 	return updated
