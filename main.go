@@ -18,11 +18,17 @@ func main() {
 	color.Green(startMessage)
 	color.White(strings.Repeat("=", len(startMessage)))
 
-	var input string
+	var n int
 	io := bufio.NewReader(os.Stdin)
-	fmt.Fscan(io, &input)
+	fmt.Fscan(io, &n)
 
-	result := solutions.TimeConversion(input)
+	input := make([]int, n)
+
+	for i := 0; i < n; i++ {
+		fmt.Fscan(io, &input[i])
+	}
+
+	result := solutions.BirthdayCake(input)
 	fmt.Println(result)
 
 }
