@@ -28,7 +28,9 @@ func main() {
 		fmt.Fscan(io, &input[i])
 	}
 
-	result := solutions.BirthdayCake(input)
-	fmt.Println(result)
+	result := solutions.GradingStudents(input)
+	for _, val := range result {
+		fmt.Println(val)
+	}
 
 }
